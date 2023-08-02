@@ -41,5 +41,5 @@ async fn flixhq() -> (StatusCode, Json<Test>) {
         id: deez.results[0].id.clone().unwrap(),
     };
 
-    (StatusCode::OK, Json<result>)
+    (StatusCode::OK, Json(result))
 }
