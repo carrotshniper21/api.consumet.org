@@ -1,4 +1,5 @@
 use consumet_api_rs::providers::movies;
+use consumet_api_rs::models::{IMovieResult, ISearch};
 use serde::{Deserialize, Serialize};
 
 use axum::{
@@ -7,6 +8,7 @@ use axum::{
     routing::{get, post},
     Json, Router,
 };
+use std::net::SocketAddr;
 
 #[derive(Debug, Deserialize, Serialize)]
 struct Test {
@@ -33,13 +35,11 @@ async fn main() {
         .unwrap();
 }
 
-async fn flixhq() -> (StatusCode, Json<Test>) {
+#[axum::debug_handler]
+async fn flixhq() -> (StatusCode, Json<ISearch<IMovieResult>>) {
     let flixhq = movies::FlixHQ;
 
     let deez = flixhq.search("hi", None).await.unwrap();
-    let result = Test {
-        id: deez.results[0].id.clone().unwrap(),
-    };
 
-    (StatusCode::OK, Json(result))
+    (StatusCode::OK, Json(deez))
 }
