@@ -1,19 +1,8 @@
-use consumet_api_rs::providers::movies;
 use consumet_api_rs::models::{IMovieResult, ISearch};
-use serde::{Deserialize, Serialize};
+use consumet_api_rs::providers::movies;
 
-use axum::{
-    http::StatusCode,
-    response::IntoResponse,
-    routing::{get, post},
-    Json, Router,
-};
+use axum::{http::StatusCode, routing::get, Json, Router};
 use std::net::SocketAddr;
-
-#[derive(Debug, Deserialize, Serialize)]
-struct Test {
-    id: String,
-}
 
 #[tokio::main]
 async fn main() {
@@ -23,7 +12,7 @@ async fn main() {
     // build our application with a route
     let app = Router::new()
         // `GET /` goes to `root`
-        .route("/", get(flixhq));
+        .route("/", get(home));
 
     // run our app with hyper
     // `axum::Server` is a re-export of `hyper::Server`
@@ -33,6 +22,10 @@ async fn main() {
         .serve(app.into_make_service())
         .await
         .unwrap();
+}
+
+async fn home() -> (StatusCode, &'static str) {
+    (StatusCode::OK, "Welcome to consumet api rust! ")
 }
 
 #[axum::debug_handler]
