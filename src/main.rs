@@ -33,7 +33,7 @@ async fn main() {
         .unwrap();
 }
 
-async fn flixhq() -> (StatusCode, Test) {
+async fn flixhq() -> (StatusCode, Json<Test>) {
     let flixhq = movies::FlixHQ;
 
     let deez = flixhq.search("hi", None).await.unwrap();
@@ -41,5 +41,5 @@ async fn flixhq() -> (StatusCode, Test) {
         id: deez.results[0].id.clone().unwrap(),
     };
 
-    (StatusCode::OK, result)
+    (StatusCode::OK, Json<result>)
 }
