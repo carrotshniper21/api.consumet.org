@@ -65,7 +65,7 @@ run the following command to pull and run the docker image.
 ```sh
 $ docker build -t consumet-api . && docker run -p 8080:8080 consumet-api
 ```
-This will start the server on port 3000. You can access the server at http://localhost:3000/, And can change the port by changing the -p option to `-p <port>:3000`.
+This will start the server on port 8080. You can access the server at http://localhost:8080/, And can change the port by changing the -p option to `-p <port>:8080`.
 
 You can add `-d` flag to run the server in detached mode.
 
