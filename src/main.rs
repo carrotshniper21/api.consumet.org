@@ -8,6 +8,8 @@ use models::ResponseError;
 async fn main() {
     dotenv::dotenv().ok();
 
+    println!("Main Router initialized!");
+
     let mut port = std::env::var("PORT").unwrap();
     port = if port.is_empty() {
         "8080".to_string()
@@ -27,7 +29,7 @@ async fn main() {
     // run our app with hyper
     // `axum::Server` is a re-export of `hyper::Server`
     let addr = std::net::SocketAddr::from_str(&format!("0.0.0.0:{}", port)).unwrap();
-    tracing::info!("listening on {}", addr);
+    println!("listening on {}!", addr);
     axum::Server::bind(&addr)
         .serve(app.into_make_service())
         .await
