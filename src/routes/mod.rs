@@ -4,6 +4,7 @@ pub mod comics;
 pub mod light_novels;
 pub mod manga;
 pub mod meta;
+pub mod movies;
 pub mod news;
 pub mod others;
 
@@ -13,5 +14,6 @@ pub use comics::*;
 pub use light_novels::*;
 pub use manga::*;
 pub use meta::*;
+pub use movies::*;
 pub use news::*;
 pub use others::*;
