@@ -48,6 +48,7 @@ Run the following command to clone the repository, and install the dependencies.
 ```sh
 $ git clone https://github.com/carrotshniper21/consumet-api.git
 $ cd consumet-api
+$ rustup default nightly
 $ cargo build --release
 ```
 
