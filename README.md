@@ -17,7 +17,7 @@
     <a href="https://discord.gg/qTPfvMxzNH">
       <img src="https://img.shields.io/discord/987492554486452315?color=7289da&label=discord&logo=discord&logoColor=7289da" alt="Discord">
     </a>
-    <a href="https://github.com/eatmynerds/consumet.rs/blob/master/LICENSE">
+    <a href="https://github.com/carrotshniper21/consumet.rs/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/consumet/api" alt="GitHub">
   </a>
 </p>
@@ -43,7 +43,7 @@ installation is simple.
 Run the following command to clone the repository, and install the dependencies.
 
 ```sh
-$ git clone https://github.com/eatmynerds/api.consumet.org
+$ git clone https://github.com/carrotshniper21/api.consumet.org
 $ cd api.consumet.org
 $ cargo build --release
 ```
@@ -55,13 +55,13 @@ $ cargo run
 ```
 
 ### Docker
-Docker image is available at [Docker Hub](https://hub.docker.com/r/eatmynerds/consumet-api).
+Docker image is available at [Docker Hub](https://hub.docker.com/r/carrotshniper21/consumet-api).
 
 run the following command to pull and run the docker image.
 
 ```sh
-$ docker pull eatmynerds/consumet-api
-$ docker run -p 3000:3000 eatmynerds/consumet-api
+$ docker pull carrotshniper21/consumet-api
+$ docker run -p 3000:3000 carrotshniper21/consumet-api
 ```
 This will start the server on port 3000. You can access the server at http://localhost:3000/, And can change the port by changing the -p option to `-p <port>:3000`.
 
@@ -71,22 +71,22 @@ You can add `-d` flag to run the server in detached mode.
 Please refer to the [documentation](https://docs.consumet.org). Join our [Discord server](https://discord.gg/qTPfvMxzNH) if you need any additional help or have any questions, comments, or suggestions.
 
 ## Development
-Pull requests and stars are always welcome, for bugs and features create a new [issue](https://github.com/consumet/api.consumet.org/issues). If you're brave to make make a commit to the project see [CONTRIBUTING.md](https://github.com/eatmynerds/consumet.rs/blob/master/docs/guides/contributing.md).
+Pull requests and stars are always welcome, for bugs and features create a new [issue](https://github.com/consumet/api.consumet.org/issues). If you're brave to make make a commit to the project see [CONTRIBUTING.md](https://github.com/carrotshniper21/consumet.rs/blob/master/docs/guides/contributing.md).
 
 ## Showcases
 Showcases are welcome! If you have a project that uses Consumet API, please let us know by making a new discussion [here](https://github.com/consumet-rs/api.consumet.org/discussions/categories/show-and-tell) or by joining our [Discord server](https://discord.gg/qTPfvMxzNH). We will add your project to our [showcases page](https://consumet.org/showcase).
 
 ## Provider Request
-Make a new [issue](https://github.com/eatmynerds/consumet.rs/issues/new?assignees=&labels=provider+request&template=provider-request.yml) with the name of the provider on the title, as well as a link to the provider in the body paragraph.
+Make a new [issue](https://github.com/carrotshniper21/consumet.rs/issues/new?assignees=&labels=provider+request&template=provider-request.yml) with the name of the provider on the title, as well as a link to the provider in the body paragraph.
 
 ## Support
-You can contact the maintainers of consumet api rs via [email](mailto:vipershniper08@gmail.com), or [join the discord server](https://discord.gg/qTPfvMxzNH) (Recommended).
+You can contact the maintainers of consumet.rs via [email](mailto:vipershniper07@gmail.com), or [join the discord server](https://discord.gg/qTPfvMxzNH) (Recommended).
 
 <a href="https://discord.gg/qTPfvMxzNH">
    <img src="https://discordapp.com/api/guilds/987492554486452315/widget.png?style=banner2">
 </p>
 
 ## Related repositories
- - [Consumet.rs](https://github.com/eatmynerds/consumet.rs)
+ - [Consumet.rs](https://github.com/carrotshniper21/consumet.rs)
  - [Website](https://github.com/consumet/consumet.org)
  - [Providers Status](https://github.com/consumet/providers-status)
