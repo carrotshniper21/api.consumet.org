@@ -71,7 +71,7 @@ You can add `-d` flag to run the server in detached mode.
 Please refer to the [documentation](https://docs.consumet.org). Join our [Discord server](https://discord.gg/qTPfvMxzNH) if you need any additional help or have any questions, comments, or suggestions.
 
 ## Development
-Pull requests and stars are always welcome, for bugs and features create a new [issue](https://github.com/consumet/api.consumet.org/issues). If you're brave to make make a commit to the project see [CONTRIBUTING.md](https://github.com/carrotshniper21/consumet.rs/blob/master/docs/guides/contributing.md).
+Pull requests and stars are always welcome, for bugs and features create a new [issue](https://github.com/carrotshniper21/api.consumet.org/issues). If you're brave to make make a commit to the project see [CONTRIBUTING.md](https://github.com/carrotshniper21/consumet.rs/blob/master/docs/guides/contributing.md).
 
 ## Showcases
 Showcases are welcome! If you have a project that uses Consumet API, please let us know by making a new discussion [here](https://github.com/consumet-rs/api.consumet.org/discussions/categories/show-and-tell) or by joining our [Discord server](https://discord.gg/qTPfvMxzNH). We will add your project to our [showcases page](https://consumet.org/showcase).
