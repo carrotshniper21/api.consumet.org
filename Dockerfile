@@ -1,21 +1,42 @@
-# Use the official Rust image as the base image
-FROM rust:latest
+FROM rust:latest AS builder
 
-# Set the working directory inside the container
-WORKDIR /usr/src/consumet-api
+LABEL version="1.0.0"
+LABEL description="Consumet API (Axum) Docker Image"
 
-# Copy the Rust application's source code into the container
+ARG PORT=3000
+ENV PORT=${PORT}
+
+WORKDIR /app
+
 COPY . .
 
-RUN rustup default nightly
+RUN \
+  --mount=type=cache,target=/app/target/ \
+  --mount=type=cache,target=/usr/local/cargo/registry/ \
+  cargo build --release && \
+  cp ./target/release/consumet-api /
 
-ENV PORT=8080
+FROM debian:bookworm-slim AS final
 
-# Build the Rust application inside the container
-RUN cargo build --release
+RUN adduser \
+  --disabled-password \
+  --gecos "" \
+  --home "/nonexistent" \
+  --shell "/sbin/nologin" \
+  --no-create-home \
+  --uid "10001" \
+  appuser
 
-# Expose any necessary ports (if your app requires it)
-EXPOSE 8080
+COPY --from=builder /consumet-api /usr/local/bin
 
-# Specify the command to run your application (modify as needed)
-CMD ["./target/release/consumet-api"]
+RUN chown appuser /usr/local/bin/consumet-api
+
+USER appuser
+
+WORKDIR /usr/local/bin
+
+ENV RUST_LOG=INFO
+
+EXPOSE ${PORT}
+
+ENTRYPOINT ["consumet-api"]
