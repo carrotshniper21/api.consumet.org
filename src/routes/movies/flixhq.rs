@@ -2,7 +2,7 @@ use crate::models::ProviderInfo;
 use axum::{extract::Query, http::StatusCode, routing::get, Json, Router};
 use consumet::{
     models::StreamingServers,
-    providers::movies::{
+    providers::movies::flixhq::{
         FlixHQ, FlixHQInfo, FlixHQResult, FlixHQSearchResults, FlixHQServers, FlixHQSources,
     },
 };
@@ -37,7 +37,7 @@ pub async fn mount() -> Router {
         .route("/", get(flixhq_home))
         .route("/search", get(flixhq_search))
         .route("/info", get(flixhq_info))
-        .route("/servers", get(flixhq_server))
+        .route("/servers", get(flixhq_servers))
         .route("/sources", get(flixhq_sources))
         .route("/recent-shows", get(flixhq_recent_shows))
         .route("/recent-movies", get(flixhq_recent_movies))
@@ -84,7 +84,9 @@ pub async fn flixhq_info(route_params: Query<FlixHQMediaInfo>) -> (StatusCode, J
     (StatusCode::OK, Json(info))
 }
 
-pub async fn flixhq_server(route_params: Query<FlixHQServer>) -> (StatusCode, Json<FlixHQServers>) {
+pub async fn flixhq_servers(
+    route_params: Query<FlixHQServer>,
+) -> (StatusCode, Json<FlixHQServers>) {
     let server = FlixHQ
         .servers(&route_params.episode_id, &route_params.media_id)
         .await
